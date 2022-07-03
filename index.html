@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Champion Randomizer</title>
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@1,900&display=swap');
+        </style>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+    </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <body>
+        <div class="titulo">
+            <h1>Champion Randomizer</h1>
+        </div>
+        <div class="lane_buttons">
+            <button class="all" onclick="All()" id="all" title="All"></button>
+            <button class="top" onclick="Top()" id="top" title="Top"></button>
+            <button class="jgl" onclick="Jgl()" id="jgl" title="Jungle"></button>
+            <button class="mid" onclick="Mid()" id="mid" title="Mid"></button>
+            <button class="adc" onclick="Adc()" id="adc" title="Adc"></button>
+            <button class="supp" onclick="Supp()" id="supp" title="Suporte"></button>
+            <button class="player"></button>
+        </div>
+        <div class="quadrado">
+            <canvas id="canvas" width="246px" height="246px"></canvas>
+        </div>
+        <h4 href="https://elo.rip" class="ChampName" id='ChampName'></h4>
+        <div class="control_buttons">
+            <button id="start" class="start" onclick="Random()">START</button>
+        </div>
+        <div class="yn_buttons">
+            <button class="accept" id="accept" onclick="abrirSite()">Accept</button>
+            <button class="refuse" id="refuse" onclick="voltarBtn()">Refuse</button>
+        </div>
+        <script type="application/javascript" src="js/Champion_Randomizer.js"></script>
+    </body>
+</html>
