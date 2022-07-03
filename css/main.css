@@ -17,8 +17,9 @@ h1 {
     text-align: center;
 }
 .lane_buttons {
-    width: 25%;
+    width: 23%;
     margin: auto auto;
+    display: flex;
 }
 .all {
     padding: 21px 21px;
