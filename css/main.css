@@ -14,6 +14,7 @@ h1 {
     color: whitesmoke;
     margin-block-end: 0.7em;
     margin-block-start: .3em;
+    text-align: center;
 }
 .lane_buttons {
     width: 25%;
@@ -180,6 +181,25 @@ h4 {
             width: 40%;
     }
     .yn_buttons {
-            margin: auto auto;
+            margin: auto 20%;
+    }
+}
+@media only screen and (max-width: 385px) {
+    /* For Mobile Phones: */
+
+    h1 {
+        font-size: 45px;
+    }
+    .lane_buttons {
+            width: 102%;
+    }
+    .quadrado {
+            width: 61%;
+    }
+    .control_buttons {
+            width: 40%;
+    }
+    .yn_buttons {
+            margin: auto 10%;
     }
 }
