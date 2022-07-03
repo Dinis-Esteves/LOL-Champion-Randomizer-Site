@@ -180,6 +180,6 @@ h4 {
             width: 40%;
     }
     .yn_buttons {
-            margin: auto 5%;
+            margin: auto auto;
     }
 }
