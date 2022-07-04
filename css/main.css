@@ -17,7 +17,7 @@ h1 {
     text-align: center;
 }
 .lane_buttons {
-    width: 23%;
+    width: 50vh;
     margin: auto auto;
     display: flex;
 }
@@ -113,7 +113,7 @@ canvas {
     cursor: pointer;
 }
 .control_buttons {
-    width: 10%;
+    width: 25vh;
     margin: auto auto;
     margin-top: 1cm;
     margin-block-start: 9px;
@@ -165,7 +165,7 @@ h4 {
     width: 100%;
 }
 .quadrado {
-    width: 16%;
+    width: 37vh;
     margin: auto auto;
 }
 
@@ -173,34 +173,54 @@ h4 {
     /* For Mobile Phones: */
 
     .lane_buttons {
-            width: 95%;
+            width: 39vh;
     }
     .quadrado {
-            width: 61%;
+            width: 28vh;
     }
     .control_buttons {
-            width: 40%;
+            width: 18.5vh;
+    }
+    .accept,
+    .refuse {
+        width: 140px;
+        height: 60px;
     }
     .yn_buttons {
-            margin: auto 20%;
+            margin: auto 6vh;
     }
 }
 @media only screen and (max-width: 385px) {
-    /* For Mobile Phones: */
+    /* For Mini Mobile Phones: */
 
     h1 {
-        font-size: 45px;
+        font-size: 40px;
     }
     .lane_buttons {
-            width: 102%;
+            width: 50vh;
     }
     .quadrado {
-            width: 61%;
+            width: 39vh;
     }
     .control_buttons {
-            width: 40%;
+            width: 26.5vh;
     }
     .yn_buttons {
-            margin: auto 10%;
+            margin: auto 0vh;
+    }
+    .all,
+    .start,
+    .top,
+    .mid,
+    .jgl,
+    .adc,
+    .supp,
+    .player {
+        padding: 16px 16px;
+}
+    .accept,
+    .refuse {
+        width: 130px;
+        height: 50px;
     }
 }
