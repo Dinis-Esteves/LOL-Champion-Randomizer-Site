@@ -4,13 +4,14 @@ let JungleChampList = ['Amumu', 'Belveth', 'Chogath', 'Diana', 'Dr. Mundo', 'Ekk
 let BotChampList = ['Aphelios', 'Ashe', 'Caitlyn', 'Draven', 'Ezreal', 'Graves', 'Jhin', 'Jinx', 'Kaisa', 'Kalista', 'Kindred', 'Kogmaw', 'Lucian', 'Miss Fortune', 'Samira', 'Senna', 'Quinn', 'Sivir', 'Tristana', 'Twitch', 'Varus', 'Vayne', 'Xayah', 'Yasuo', 'Zeri', 'Akshan']
 let SuppChampList = ['Alistar', 'Amumu', 'Bard', 'Blitzcrank', 'Brand', 'Braum', 'Galio', 'Janna', 'Karma', 'Leona', 'Lulu', 'Lux', 'Malphite', 'Maokai', 'Morgana', 'Nami', 'Nautilus', 'Pantheon', 'Poppy', 'Pyke', 'Rakan', 'Renata', 'Rell', 'Senna', 'Seraphine', 'Sett', 'Shaco', 'Shen', 'Sona', 'Soraka', 'Swain', 'Tahm Kench', 'Taric', 'Thresh', 'Velkoz', 'Vex', 'Xerath', 'Yuumi', 'Zac', 'Zilean', 'Zyra'];
 let AllChampList = ['Aatrox', 'Ahri', 'Akali', 'Akshan', 'Alistar', 'Amumu', 'Anivia', 'Annie', 'Aphelios', 'Ashe', 'Aurelion Sol', 'Azir', 'Bard', 'Belveth', 'Blitzcrank', 'Brand', 'Braum', 'Caitlyn', 'Camile', 'Cassiopeia', 'Chogath', 'Corki', 'Darius', 'Diana', 'Draven', 'Dr. Mundo', 'Ekko', 'Elise', 'Evelyn', 'Ezreal', 'Fiddlesticks', 'Fiora', 'Fizz', 'Galio', 'Gangplank', 'Garen', 'Gnar', 'Gragas', 'Graves', 'Gwen', 'Hecarin', 'Heimerdinger', 'illaoi', 'Irelia', 'Ivern', 'Janna', 'Jarvan', 'Jax', 'Jayce', 'Jhin', 'Jinx', 'Kaisa', 'Kalista', 'Karma', 'Kartus', 'Kassadin', 'Katarina', 'Kayle', 'Kayn', 'Kennen', 'Khazix', 'Kindred', 'Kled', 'Kogmaw', 'Leblanc', 'LeeSin', 'Leona', 'Lillia', 'Lissandra', 'Lucian', 'Lulu', 'Lux', 'Malphite', 'Malzahar', 'Master Yi', 'Miss Fortune', 'Maokai', 'Mordekaiser', 'Morgana', 'Nami', 'Nasus', 'Nautilus', 'Nekko', 'Nidalee', 'Nocturne', 'Nunu', 'Olaf', 'Orianna', 'Ornn', 'Pantheon', 'Poppy', 'Pyke', 'Qiyana', 'Quinn', 'Rakan', 'Rammus', 'Reksai', 'Renata', 'Rell', 'Renekton', 'Rengar', 'Riven', 'Rumble', 'Ryze', 'Samira', 'Sejuani', 'Senna', 'Seraphine', 'Sett', 'Shaco', 'Shen', 'Shyvana', 'Singed', 'Sion', 'Sivir', 'Skarner', 'Sona', 'Soraka', 'Swain', 'Sylas', 'Syndra', 'Tahm Kench', 'Talliyah', 'Talon', 'Taric', 'Teemo', 'Twisted Fate', 'Thresh', 'Tristana', 'Trundle', 'Tryndamere', 'Twitch', 'Udyr', 'Urgot', 'Varus', 'Vayne', 'Veigar', 'Velkoz', 'Vex', 'Vi', 'Viego', 'Viktor', 'Vladimir',  'Volibear', 'Wukong', 'Warwick', 'Xayah', 'Xerath', 'XinZao', 'Yasuo', 'Yone', 'Yorick', 'Yuumi', 'Zac', 'Zed', 'Zeri', 'Ziggs', 'Zilean', 'Zoe', 'Zyra'];
+let lists = [AllChampList,MidChampList,TopChampList,JungleChampList,BotChampList,SuppChampList]
 let canvas = document.getElementById('canvas');
 let ctx = canvas.getContext('2d');
 let starBtn = document.getElementById('start');
 let acptBtn = document.getElementById('accept');
 let rfsBtn = document.getElementById('refuse');
-var role = 0
-
+var role = -1
+var passo;
 
 function Mid() {
   role = 1;
@@ -21,7 +22,7 @@ function Top() {
   SelectedBtn('top');
 }
 function All() {
-  role = 6;
+  role = 0;
   SelectedBtn('all');
 }
 function Adc() {
@@ -36,89 +37,37 @@ function Jgl() {
   role = 3;
   SelectedBtn('jgl');
 }
-function MidRandom() {
-    clear();
-    const randomElement = MidChampList[Math.floor(Math.random() * MidChampList.length)];
-    var img =  randomElement + '.png';
-    champ = new Image();
-    champ.src = './img/champions/' + img;
-    draw();
-    document.getElementById('ChampName').textContent = randomElement;
-}
-function TopRandom() {
-  clear();
-  const randomElement = TopChampList[Math.floor(Math.random() * TopChampList.length)];
-  var img =  randomElement + '.png';
-  champ = new Image();
-  champ.src = './img/champions/' + img;
-  draw();
-  document.getElementById('ChampName').textContent = randomElement;
-}
-function JungleRandom() {
-  clear();
-  const randomElement = JungleChampList[Math.floor(Math.random() * JungleChampList.length)];
-  var img =  randomElement + '.png';
-  champ = new Image();
-  champ.src = './img/champions/' + img;
-  draw();
-  document.getElementById('ChampName').textContent = randomElement;
-}
-function BotRandom() {
-  clear();
-  const randomElement = BotChampList[Math.floor(Math.random() * BotChampList.length)];
-  var img =  randomElement + '.png';
-  champ = new Image();
-  champ.src = './img/champions/' + img;
-  draw();
-  document.getElementById('ChampName').textContent = randomElement;
-}
-function SuppRandom() {
-  clear();
-  const randomElement = SuppChampList[Math.floor(Math.random() * SuppChampList.length)];
-  var img =  randomElement + '.png';
-  champ = new Image();
-  champ.src = './img/champions/' + img;
-  draw();
-  document.getElementById('ChampName').textContent = randomElement;
-}
-function AllRandom() {
-  clear();
-  const randomElement = AllChampList[Math.floor(Math.random() * AllChampList.length)];
-  var img =  randomElement + '.png';
-  champ = new Image();
-  champ.src = './img/champions/' + img;
-  draw();
-  document.getElementById('ChampName').textContent = randomElement;
-}
+
+
+
 function Random() {
-  if (role == 1) {
-    MidRandom();
-    site = 'https://u.gg/lol/champions/' + document.getElementById('ChampName').textContent + '/build';
-    mudarBtn();
-  } else if (role == 2) {
-    TopRandom();
-    site = 'https://u.gg/lol/champions/' + document.getElementById('ChampName').textContent + '/build';
-    mudarBtn();
-    site = 'https://u.gg/lol/champions/' + document.getElementById('ChampName').textContent + '/build';
-  } else if (role == 3) {
-    JungleRandom();
-    site = 'https://u.gg/lol/champions/' + document.getElementById('ChampName').textContent + '/build';
-    mudarBtn();
-  } else if (role == 4) {
-    BotRandom();
-    site = 'https://u.gg/lol/champions/' + document.getElementById('ChampName').textContent + '/build';
-    mudarBtn();
-  } else if (role == 5) {
-    SuppRandom();
-    site = 'https://u.gg/lol/champions/' + document.getElementById('ChampName').textContent + '/build';
-    mudarBtn();
-  } else if (role == 6) {
-    AllRandom();
-    site = 'https://u.gg/lol/champions/' + document.getElementById('ChampName').textContent + '/build';
-    mudarBtn();
-  } else if (role == 0) {
+  delay = 30
+  const start = new Date()
+
+  if (role == -1) {
     alert("Escolha uma lane, por favor!");
-  }
+  } else {
+    function timeoutLoop() {
+      if(new Date() - start < 1000) {
+        starBtn.style.display='none';
+        clear();
+        const randomElement = lists[role][Math.floor(Math.random() * lists[role].length)];
+        var img =  randomElement + '.png';
+        champ = new Image();
+        champ.src = './img/champions/' + img;
+        draw();
+        document.getElementById('ChampName').textContent = randomElement;
+        site = 'https://u.gg/lol/champions/' + document.getElementById('ChampName').textContent + '/build';
+        setTimeout(timeoutLoop, delay);
+      }
+      else {
+        acptBtn.style.display='inline';
+        rfsBtn.style.display='inline';
+      }
+    }
+   
+    setTimeout(timeoutLoop, delay)
+  }  
 }
 function draw() {
   ctx.globalCompositeOperation = 'destination-over';
@@ -151,4 +100,10 @@ function voltarBtn() {
 function abrirSite() {
   window.open(site);
 }
-//https://getcssscan.com nice site to css things
+function custom() {
+  choose_page.style.display='block'
+  principal_page.style.display='none'
+  document.body.style.backgroundColor = '#041022';
+}
+
+//https://getcssscan.com nice site to css things.
