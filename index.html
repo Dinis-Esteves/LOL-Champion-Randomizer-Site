@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<section id="principal_page">
     <head>
         <title>Champion Randomizer</title>
         <style>
@@ -19,7 +20,7 @@
             <button class="mid" onclick="Mid()" id="mid" title="Mid"></button>
             <button class="adc" onclick="Adc()" id="adc" title="Adc"></button>
             <button class="supp" onclick="Supp()" id="supp" title="Suporte"></button>
-            <button class="player"></button>
+            <button class="player" id="customBtn" onclick="custom()" title="custom"></button>
         </div>
         <div class="quadrado">
             <canvas id="canvas" width="246px" height="246px"></canvas>
@@ -32,6 +33,10 @@
             <button class="accept" id="accept" onclick="abrirSite()">Accept</button>
             <button class="refuse" id="refuse" onclick="voltarBtn()">Refuse</button>
         </div>
+</section>
+<section class="champion_chose" id="choose_page">
+    
+</section>
         <script type="application/javascript" src="js/Champion_Randomizer.js"></script>
     </body>
 </html>
