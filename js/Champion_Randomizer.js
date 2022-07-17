@@ -37,9 +37,6 @@ function Jgl() {
   role = 3;
   SelectedBtn('jgl');
 }
-
-
-
 function Random() {
   delay = 30
   const start = new Date()
@@ -105,5 +102,9 @@ function custom() {
   principal_page.style.display='none'
   document.body.style.backgroundColor = '#041022';
 }
-
+function Fechar() {
+  choose_page.style.display='none'
+  principal_page.style.display='block'
+  document.body.style.backgroundColor = 'rgb(34, 40, 49)';
+}
 //https://getcssscan.com nice site to css things.
